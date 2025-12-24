@@ -1,0 +1,69 @@
+{
+  "name": "vscode-tetris",
+  "displayName": "Tetris In VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tetris-explorer",
+          "title": "Tetris",
+          "icon": "$(game)"
+        }
+      ]
+    },
+    "views": {
+      "tetris-explorer": [
+        {
+          "type": "webview",
+          "id": "tetris.sidebarView",
+          "name": "Tetris Game"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "tetris.reset",
+        "title": "Tetris: Reset Game"
+      }
+    ],
+    "configuration": {
+      "title": "Tetris Config",
+      "properties": {
+        "tetris.dropSpeed": {
+          "type": "number",
+          "default": 1000,
+          "description": "方块下落速度 (毫秒)，数值越小速度越快。"
+        }
+      }
+    }
+  },
+
+  "publisher": "FrozenFrog", 
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/你的用户名/仓库名"
+  },
+  "categories": [
+    "Games"
+  ],
+  "keywords": [
+    "tetris",
+    "game"
+  ]
+
+}

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES6",
+        "outDir": "out",
+        "rootDir": "src",
+        "lib": [
+            "ES2018", 
+            "DOM"
+        ],
+        "strict": true,
+        "sourceMap": true
+    }
+}

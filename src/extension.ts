@@ -229,6 +229,7 @@ class TetrisViewProvider implements vscode.WebviewViewProvider {
                         }
                     }
 
+                    // --- 修改后的绘制函数：恢复为实色主体填充 ---
                     function drawMatrix(matrix, offset) {
                         matrix.forEach((row, y) => {
                             row.forEach((value, x) => {
@@ -239,6 +240,7 @@ class TetrisViewProvider implements vscode.WebviewViewProvider {
                             });
                         });
                     }
+                    // -----------------------
 
                     function draw() {
                         context.fillStyle = bgColor;

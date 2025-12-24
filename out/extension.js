@@ -213,16 +213,20 @@ class TetrisViewProvider {
                         }
                     }
 
+                    // --- 修改后的绘制函数：透明主体 + 实色线条外框 ---
                     function drawMatrix(matrix, offset) {
                         matrix.forEach((row, y) => {
                             row.forEach((value, x) => {
                                 if (value !== 0) {
-                                    context.fillStyle = colors[value];
-                                    context.fillRect(x + offset.x, y + offset.y, 1, 1);
+                                    // 仅绘制实色边框
+                                    context.strokeStyle = colors[value];
+                                    context.lineWidth = 0.08; // 适当增加线宽使外框更明显
+                                    context.strokeRect(x + offset.x, y + offset.y, 1, 1);
                                 }
                             });
                         });
                     }
+                    // -----------------------
 
                     function draw() {
                         context.fillStyle = bgColor;
